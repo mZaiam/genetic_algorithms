@@ -159,7 +159,7 @@ def population_switch_mutation_ts(population, mutation_rate=0.05):
 ############################### CROSSOVER OPERATORS ##############################
 ##################################################################################
 
-def individual_ordered_crossover_ts(parent1, parent2, crossover_rate=0.5):
+def ordered_crossover_ts(parent1, parent2, crossover_rate=0.5):
     '''Applies the ordered crossover to two parents. It selects a partition of both parents, and creates two more lists 
     with them. After, it appends the rest of the elements that are not in the new individuals, following the order in which 
     they appear in the other parent.
@@ -204,7 +204,7 @@ def population_ordered_crossover_ts(population, crossover_rate=0.5):
     
     if len(population) % 2 == 0:
         for parent1, parent2 in zip(population[ : : 2], population[1 : : 2]):
-            individual1, individual2 = individual_ordered_crossover_ts(parent1, parent2, crossover_rate)
+            individual1, individual2 = ordered_crossover_ts(parent1, parent2, crossover_rate)
             new_population.append(individual1)
             new_population.append(individual2)
         rd.shuffle(new_population)
@@ -212,7 +212,7 @@ def population_ordered_crossover_ts(population, crossover_rate=0.5):
     
     else: 
         for parent1, parent2 in zip(population[ : -1 : 2], population[1 : : 2]):
-            individual1, individual2 = individual_ordered_crossover_ts(parent1, parent2, crossover_rate)
+            individual1, individual2 = ordered_crossover_ts(parent1, parent2, crossover_rate)
             new_population.append(individual1)
             new_population.append(individual2)
             
