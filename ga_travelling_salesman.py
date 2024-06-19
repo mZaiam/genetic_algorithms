@@ -104,7 +104,7 @@ def population_fitness_ts(population, cities, penalty=1):
       penalty: integer representing punishment for even cities coming first.
       
     Returns:
-      fitness: integer.
+      population_fitness: integer.
     '''
     population_fitness = []
     
