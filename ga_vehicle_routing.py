@@ -108,7 +108,7 @@ def population_fitness_vr(population, cities):
       cities: list of city coordinates.
             
     Returns:
-      fitness: integer.
+      population_fitness: integer.
     '''
     population_fitness = []
     
